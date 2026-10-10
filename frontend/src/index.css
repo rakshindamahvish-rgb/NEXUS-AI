@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-gray-200 font-sans antialiased selection:bg-nexus-cyan/20 selection:text-nexus-electric min-h-screen overflow-x-hidden;
+  }
+}
+
+/* Minimal sleek scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080C14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Simple clean card styling */
+.clean-card {
+  @apply bg-dark-900 border border-slate-800/80 rounded-xl transition-all duration-200;
+}
+
+.clean-card-hover {
+  @apply hover:border-slate-700/90 hover:bg-dark-850/80;
+}
+
+/* Subtle focus state */
+input:focus, select:focus, textarea:focus {
+  @apply outline-none ring-1 ring-nexus-cyan/50 border-nexus-cyan/50;
+}

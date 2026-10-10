@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "NEXUS: Run FastAPI Backend",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--app-dir",
+        "backend",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "jinja": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "NEXUS: Run Pytest Test Suite",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "backend/tests",
+        "-v"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
